@@ -1,1 +1,59 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+.files-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1em;
+  text-align: left;
+  width: 100%;
+}
+
+.files-table th {
+  font-weight: bold;
+}
+
+/* Hack to ellipsize the text in the table cells if it's too long. */
+.files-table td,
+.files-table th {
+  padding: 0.25em 1em 0.25em 0;
+  position: relative;
+}
+
+.files-table td:not(.checkbox)::before {
+  content: "&nbsp;";
+  visibility: hidden;
+}
+
+.files-table td:not(.checkbox) span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 1em);
+}
+
+.name,
+.device {
+  width: 25%;
+}
+
+.path {
+  width: 35%;
+}
+
+.status {
+  width: 15%;
+}
+
+.actions {
+  margin-bottom: 1em;
+}
+
+.selected-status {
+  display: inline-block;
+  font-size: 1.2em;
+  min-width: 10em;
+}
+
+.btn-download {
+}

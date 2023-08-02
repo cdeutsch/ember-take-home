@@ -1,0 +1,9 @@
+<tr>
+  <td class="checkbox">
+    <input type="checkbox" checked={{@file.isSelected}} {{on "change" this.toggleSelection}} aria-label="Download {{@file.name}}" />
+  </td>
+  <td class="name"><span>{{@file.name}}</span></td>
+  <td class="device"><span>{{@file.device}}</span></td>
+  <td class="path"><span>{{@file.path}}</span></td>
+  <td class="status"><span>{{@file.status}}</span></td>
+</tr>

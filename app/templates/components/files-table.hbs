@@ -1,0 +1,23 @@
+<div class="files-table-wrapper">
+  <div class="actions">
+    <span class="selected-status">{{this.selectedText}}</span>
+    <button type="button" class="btn-download" {{on "click" this.downloadSelected}} disabled={{this.isDownloadDisabled}}>Download Selected</button>
+  </div>
+
+  <table class="files-table">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Name</th>
+        <th>Device</th>
+        <th>Path</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.files as |file|}}
+        <FilesTableRow @file={{file}} @onToggleSelection={{this.toggleSelection}} />
+      {{/each}}
+    </tbody>
+  </table>
+</div>
