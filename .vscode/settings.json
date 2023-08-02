@@ -1,0 +1,62 @@
+{
+  "editor.formatOnSaveTimeout": 1500,
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "files.exclude": {
+    ".svelte-kit": true,
+    "**/.git": true, // this is a default value
+    "**/.DS_Store": true, // this is a default value
+    "**/._.DS_Store": true,
+    "**/node_modules": true, // this excludes all folders
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": true,
+    "source.fixAll.eslint": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "vsicons.associations.folders": [
+    { "icon": "log", "format": "svg", "disabled": true },
+    { "icon": "notification", "format": "svg", "disabled": true },
+    { "icon": "config",
+      "extensions": [
+        "config",
+        ".config",
+        "configs",
+        ".configs",
+        "configuration",
+        ".configuration",
+        "configurations",
+        ".configurations",
+        "setting",
+        ".setting",
+        ".settings",
+        "ini",
+        ".ini",
+        "initializers",
+        ".initializers",
+      ],
+      "format": "svg",
+      "overrides": "config"
+    }
+  ]
+}
