@@ -1,9 +1,25 @@
+body {
+  color: #202329;
+  font-family: Arial, sans-serif;
+}
+
 /* Only applly an "outline" when the keyboard is in use */
 :focus {
   outline: none;
 }
 .keyboard-in-use :focus {
   box-shadow: 0 0 0 3px #65b1ec;
+}
+
+button:hover {
+  border-color: #cccccc;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.files-table-wrapper {
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.05);
+  padding-top: 1em;
 }
 
 .files-table {
@@ -14,23 +30,39 @@
   width: 100%;
 }
 
+.files-table {
+  border-collapse: collapse;
+}
+.files-table td,
 .files-table th {
-  font-weight: bold;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+.files-table tr.selected {
+  background: #eeeeee;
+}
+.files-table tr:hover td {
+  background: #f5f5f5;
+}
+
+.files-table th {
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
 /* Hack to ellipsize the text in the table cells if it's too long. */
 .files-table td,
 .files-table th {
-  padding: 0.25em 1em 0.25em 0;
+  padding: 0.5em 1em 0.5em 0;
   position: relative;
 }
 
-.files-table td:not(.checkbox)::before {
+.files-table td:not(.checkbox):not(.status-indicator)::before {
   content: "&nbsp;";
   visibility: hidden;
 }
 
-.files-table td:not(.checkbox) span {
+.files-table td:not(.checkbox):not(.status-indicator) span {
   position: absolute;
   left: 0;
   right: 0;
@@ -40,21 +72,45 @@
   width: calc(100% - 1em);
 }
 
-.name,
-.device {
+.files-table .name,
+.files-table .device {
   width: 25%;
 }
 
-.path {
+.files-table .path {
   width: 35%;
 }
 
+.files-table .status-indicator {
+  padding-right: 0.5em;
+}
+
+.status-indicator i {
+  border-radius: 100%;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
+.available .status-indicator i {
+  background-color: #80d134;
+}
+
 .status {
+  text-transform: capitalize;
   width: 15%;
 }
 
 .actions {
   margin-bottom: 1em;
+}
+
+.select-all {
+  margin-right: 1em;
+}
+
+.select-all input {
+  margin-right: 0;
 }
 
 .selected-status {
@@ -64,4 +120,9 @@
 }
 
 .btn-download {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 1.2em;
+  padding: 0.25em;
 }

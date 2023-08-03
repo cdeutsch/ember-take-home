@@ -1,9 +1,16 @@
-<tr>
+<tr class={{this.rowClassName}}>
   <td class="checkbox">
-    <input type="checkbox" checked={{@file.isSelected}} {{on "change" this.toggleSelection}} aria-label="Download {{@file.name}}" />
+    <input
+      type="checkbox"
+      checked={{@file.isSelected}}
+      disabled={{this.isDisabled}}
+      {{on "change" this.toggleSelection}}
+      aria-label="Select {{@file.name}} for download"
+    />
   </td>
   <td class="name"><span>{{@file.name}}</span></td>
   <td class="device"><span>{{@file.device}}</span></td>
   <td class="path"><span>{{@file.path}}</span></td>
+  <td class="status-indicator"><i /></td>
   <td class="status"><span>{{@file.status}}</span></td>
 </tr>

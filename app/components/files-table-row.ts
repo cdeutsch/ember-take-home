@@ -9,6 +9,14 @@ interface FilesTableRowArgs {
 }
 
 export default class FilesTableRow extends Component<FilesTableRowArgs> {
+  // FUTURE: Is there a better way to handle multiple dynamic classes?
+  get rowClassName() {
+    return [
+      this.args.file.status,
+      this.args.file.isSelected ? 'selected' : '',
+    ].join(' ');
+  }
+
   @action
   toggleSelection(event: Event) {
     const isSelected = (event.target as HTMLInputElement).checked;
