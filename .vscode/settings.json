@@ -12,27 +12,10 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.formatDocument": true,
-    "source.fixAll.eslint": true
+    "source.formatDocument": true
+    // "source.fixAll.eslint": true
   },
-  "[css]": {
-    "editor.formatOnSave": true
-  },
-  "[html]": {
-    "editor.formatOnSave": true
-  },
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.formatOnSave": true
-  },
-  "[typescript]": {
-    "editor.formatOnSave": true
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": true
-  },
+  "editor.formatOnSave": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "vsicons.associations.folders": [
     { "icon": "log", "format": "svg", "disabled": true },
