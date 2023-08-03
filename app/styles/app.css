@@ -1,3 +1,11 @@
+/* Only applly an "outline" when the keyboard is in use */
+:focus {
+  outline: none;
+}
+.keyboard-in-use :focus {
+  box-shadow: 0 0 0 3px #65b1ec;
+}
+
 .files-table {
   border-collapse: collapse;
   border-spacing: 0;

@@ -10,3 +10,16 @@ export default class App extends Application {
 }
 
 loadInitializers(App, config.modulePrefix);
+
+// Detect when the keyboard is being used, so we can add styles based on it.
+window.document.addEventListener('click', () => {
+  window.document.body.classList.remove('keyboard-in-use');
+});
+window.document.addEventListener('keydown', (event: KeyboardEvent) => {
+  if (
+    event.key === 'Tab' ||
+    ((event.metaKey || event.ctrlKey) && event.key === 'F6')
+  ) {
+    window.document.body.classList.add('keyboard-in-use');
+  }
+});
