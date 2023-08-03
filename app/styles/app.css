@@ -11,6 +11,10 @@ body {
   box-shadow: 0 0 0 3px #65b1ec;
 }
 
+input[type="checkbox"] {
+  accent-color: #4e91e0;
+}
+
 button:hover {
   border-color: #cccccc;
   background: #f5f5f5;

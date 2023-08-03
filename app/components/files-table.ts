@@ -39,10 +39,11 @@ export default class FilesTable extends Component<FilesTableArgs> {
   }
 
   @action
-  toggleAll() {
+  toggleAll(event: Event) {
     let newIsSelected = this.selectedFiles.length !== this.files.length;
 
     this.files.forEach((file) => (file.isSelected = newIsSelected));
+    (event.target as HTMLInputElement).checked = newIsSelected;
 
     this.files = [...this.files.map((f) => ({ ...f }))];
   }
