@@ -38,22 +38,10 @@ button:hover {
   width: 100%;
 }
 
-.files-table {
-  border-collapse: collapse;
-}
-
 .files-table td,
 .files-table th {
   border-top: 1px solid #efefef;
   border-bottom: 1px solid #efefef;
-}
-
-.files-table tr.selected {
-  background: #eee;
-}
-
-.files-table tr:hover td {
-  background: #f5f5f5;
 }
 
 .files-table th {
@@ -62,6 +50,7 @@ button:hover {
 }
 
 /* Hack to ellipsize the text in the table cells if it's too long. */
+/* stylelint-disable-next-line no-duplicate-selectors */
 .files-table td,
 .files-table th {
   padding: 0.5em 1em 0.5em 0;
@@ -81,6 +70,14 @@ button:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 1em);
+}
+
+.files-table tr.selected {
+  background: #eee;
+}
+
+.files-table tr:hover td {
+  background: #f5f5f5;
 }
 
 .files-table .name,
