@@ -9,6 +9,7 @@ interface FilesTableArgs {
 
 export default class FilesTable extends Component<FilesTableArgs> {
   @tracked files = this.args.files.map((file) => ({ ...file }));
+  @tracked showDownloadModal = false;
 
   get toggleAllChecked(): boolean {
     return this.selectedFiles.length > 0;
@@ -33,9 +34,34 @@ export default class FilesTable extends Component<FilesTableArgs> {
     return this.files.filter((file) => file.isSelected);
   }
 
+  get availableFiles(): SelectableFileData[] {
+    return this.selectedFiles.filter((file) => file.status === 'available');
+  }
+
+  get scheduledFiles(): SelectableFileData[] {
+    return this.selectedFiles.filter((file) => file.status === 'scheduled');
+  }
+
+  get hasAvailableFiles(): boolean {
+    return this.availableFiles.length > 0;
+  }
+
+  get hasScheduledFiles(): boolean {
+    return this.scheduledFiles.length > 0;
+  }
+
+  get noFilesSelected(): boolean {
+    return this.selectedFiles.length === 0;
+  }
+
   @action
   downloadSelected() {
-    alert('Download Selected');
+    this.showDownloadModal = true;
+  }
+
+  @action
+  hideDownloadModal() {
+    this.showDownloadModal = false;
   }
 
   @action

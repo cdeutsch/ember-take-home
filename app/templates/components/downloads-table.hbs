@@ -1,0 +1,16 @@
+<table class="files-table">
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Device</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @files as |file|}}
+      <tr>
+        <td class="dl-path"><span>{{file.path}}</span></td>
+        <td class="dl-device"><span>{{file.device}}</span></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -1,3 +1,6 @@
+@import url("ember-modal-dialog/ember-modal-structure.css");
+@import url("ember-modal-dialog/ember-modal-appearance.css");
+
 body {
   color: #202329;
   font-family: Arial, sans-serif;
@@ -7,6 +10,7 @@ body {
 :focus {
   outline: none;
 }
+
 .keyboard-in-use :focus {
   box-shadow: 0 0 0 3px #65b1ec;
 }
@@ -16,13 +20,13 @@ input[type="checkbox"] {
 }
 
 button:hover {
-  border-color: #cccccc;
+  border-color: #ccc;
   background: #f5f5f5;
   cursor: pointer;
 }
 
 .files-table-wrapper {
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 2px rgb(0 0 0 / 5%);
   padding-top: 1em;
 }
 
@@ -37,14 +41,17 @@ button:hover {
 .files-table {
   border-collapse: collapse;
 }
+
 .files-table td,
 .files-table th {
   border-top: 1px solid #efefef;
   border-bottom: 1px solid #efefef;
 }
+
 .files-table tr.selected {
-  background: #eeeeee;
+  background: #eee;
 }
+
 .files-table tr:hover td {
   background: #f5f5f5;
 }
@@ -61,12 +68,12 @@ button:hover {
   position: relative;
 }
 
-.files-table td:not(.checkbox):not(.status-indicator)::before {
+.files-table td:not(.checkbox, .status-indicator)::before {
   content: "&nbsp;";
   visibility: hidden;
 }
 
-.files-table td:not(.checkbox):not(.status-indicator) span {
+.files-table td:not(.checkbox, .status-indicator) span {
   position: absolute;
   left: 0;
   right: 0;
@@ -105,6 +112,14 @@ button:hover {
   width: 15%;
 }
 
+.dl-device {
+  width: 30%;
+}
+
+.dl-path {
+  width: 70%;
+}
+
 .actions {
   margin-bottom: 1em;
 }
@@ -129,4 +144,8 @@ button:hover {
   border-radius: 3px;
   font-size: 1.2em;
   padding: 0.25em;
+}
+
+.ember-modal-dialog {
+  width: 70%;
 }

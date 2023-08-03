@@ -14,7 +14,7 @@
       type="button"
       class="btn-download"
       {{on "click" this.downloadSelected}}
-      disabled={{this.isDownloadDisabled}}
+      disabled={{this.noFilesSelected}}
     >⇓ Download Selected</button>
   </div>
 
@@ -39,3 +39,27 @@
     </tbody>
   </table>
 </div>
+
+{{#if this.showDownloadModal}}
+  <ModalDialog
+    @onClose={{this.hideDownloadModal}}
+    @onClickOverlay={{this.hideDownloadModal}}
+    @translucentOverlay={{true}}
+  >
+    {{#if this.noFilesSelected}}
+      <h3>No files selected</h3>
+    {{else}}
+      {{#if this.hasAvailableFiles}}
+        <h3>Downloading</h3>
+        <DownloadsTable @files={{this.availableFiles}} />
+      {{/if}}
+
+      {{#if this.hasScheduledFiles}}
+        <h3>Scheduled</h3>
+        <DownloadsTable @files={{this.scheduledFiles}} />
+      {{/if}}
+    {{/if}}
+
+    <button {{on "click" this.hideDownloadModal}} type="button">Close</button>
+  </ModalDialog>
+{{/if}}
